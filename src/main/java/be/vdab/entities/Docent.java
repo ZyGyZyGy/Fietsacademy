@@ -46,6 +46,6 @@ public class Docent implements Serializable {
 	return voornaam + " " + familienaam;
     }
     
-    
-
 }
+//test
+//test2
