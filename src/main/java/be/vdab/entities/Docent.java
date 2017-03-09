@@ -45,6 +45,5 @@ public class Docent implements Serializable {
     public String getNaam() {
 	return voornaam + " " + familienaam;
     }
-    
-}
 
+}
