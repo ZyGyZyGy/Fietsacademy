@@ -9,17 +9,7 @@ import be.vdab.filters.JPAFilter;
 
 public class DocentRepository {
 
-    public Optional<Docent> read(long id) {
-	EntityManager entityManager = JPAFilter.getEntityManager();
-	try {
-	    return Optional.ofNullable(entityManager.find(Docent.class, id));
-	} finally {
-	    entityManager.close();
-	}
-
+    public Optional<Docent> read(long id, EntityManager entityManager) {
+	return Optional.ofNullable(entityManager.find(Docent.class, id));
     }
 }
-// test123567
-// fskdhflsdhfsa
-// dasdasda
-// test9999999999
