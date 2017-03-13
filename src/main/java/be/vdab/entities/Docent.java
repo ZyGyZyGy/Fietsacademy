@@ -28,11 +28,11 @@ public class Docent implements Serializable {
     private Geslacht geslacht;
 
     public Docent(String voornaam, String familienaam, BigDecimal wedde, long rijksRegisterNr, Geslacht geslacht) {
-	this.voornaam = voornaam;
-	this.familienaam = familienaam;
-	this.wedde = wedde;
-	this.rijksRegisterNr = rijksRegisterNr;
-	this.geslacht = geslacht;
+	setVoornaam(voornaam);
+	setFamilienaam(familienaam);
+	setWedde(wedde);
+	setRijksRegisterNr(rijksRegisterNr);
+	setGeslacht(geslacht);
     }
 
     protected Docent() { // default constructor is verplicht voor JPA
