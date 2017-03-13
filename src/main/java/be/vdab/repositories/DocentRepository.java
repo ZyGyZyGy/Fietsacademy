@@ -17,4 +17,8 @@ public class DocentRepository {
 	entityManager.persist(docent);
     }
 
+    public void delete(long id, EntityManager entityManager) {
+	read(id, entityManager)
+		.ifPresent(docent -> entityManager.remove(docent));
+    }
 }
