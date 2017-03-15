@@ -55,7 +55,8 @@ public class DocentService {
 	EntityManager entityManager = JPAFilter.getEntityManager();
 	entityManager.getTransaction().begin();
 	try {
-	    docentRepository.read(id, entityManager).ifPresent(docent -> docent.opslag(percentage));
+	    docentRepository.read(id, entityManager)
+	    	.ifPresent(docent -> docent.opslag(percentage));
 	    entityManager.getTransaction().commit();
 	} catch (PersistenceException ex) {
 	    entityManager.getTransaction().rollback();

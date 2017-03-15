@@ -19,5 +19,3 @@ public class IndexServlet extends HttpServlet {
     }
 
 }
-//test
-//test2

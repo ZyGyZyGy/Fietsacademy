@@ -37,7 +37,7 @@ public class Docent implements Serializable {
 	setGeslacht(geslacht);
     }
 
-    protected Docent() { // default constructor is verplicht voor JPA
+    protected Docent() { // default constructor is verplicht voor JPA, protected - de rest van de applicatie kan deze constructor niet gebruiken
     }
 
     public long getId() {
