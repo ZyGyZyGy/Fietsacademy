@@ -9,7 +9,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import be.vdab.repositories.DocentRepository;
 import be.vdab.services.DocentService;
 import be.vdab.util.StringUtils;
 
