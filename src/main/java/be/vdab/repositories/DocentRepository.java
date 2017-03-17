@@ -21,7 +21,7 @@ public class DocentRepository extends AbstractRepository {
     }
     
     public List<Docent> findByWeddeBetween(BigDecimal van, BigDecimal tot) {
-	return getEntityManager().createQuery("select d from Docent d", Docent.class)
+	return getEntityManager().createQuery("select d from Docent d order by d.wedde desc, d.voornaam, d.familienaam", Docent.class)
 		.getResultList();
     }
 }
