@@ -58,5 +58,9 @@ public class DocentService extends AbstractService {
     public List<VoornaamEnId> findVoornamen() {
 	return docentRepository.findVoornamen();
     }
+    
+    public BigDecimal findMaxWedde() {
+	return docentRepository.findMaxWedde();
+    }
 
 }

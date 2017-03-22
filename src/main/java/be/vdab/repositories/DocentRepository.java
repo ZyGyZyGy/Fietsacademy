@@ -44,6 +44,15 @@ public class DocentRepository extends AbstractRepository {
 			VoornaamEnId.class)
 		.getResultList();
     }
+    
+    public BigDecimal findMaxWedde() {
+	return getEntityManager()
+		.createQuery(
+			"select max(d.wedde) "
+		      + "from Docent d",
+		      BigDecimal.class)
+		.getSingleResult();
+    }
 }
 
 
