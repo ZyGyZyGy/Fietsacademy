@@ -20,7 +20,7 @@ public class DocentRepository extends AbstractRepository {
 	read(id).ifPresent(docent -> getEntityManager().remove(docent));
     }
     
-    public List<Docent> findByWeddeBetween(BigDecimal van, BigDecimal tot) {
+    public List<Docent> findByWeddeBetween(BigDecimal van, BigDecimal tot, int vanafRij, int aantalRijen) {
 	return getEntityManager()
 		.createQuery("select d "
 			+ "from Docent d "
@@ -29,6 +29,8 @@ public class DocentRepository extends AbstractRepository {
 			Docent.class)
 		.setParameter("van", van)
 		.setParameter("tot", tot)
+		.setFirstResult(vanafRij)
+		.setMaxResults(aantalRijen)
 		.getResultList();
     }
 }
