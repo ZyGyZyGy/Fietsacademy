@@ -24,11 +24,13 @@ public class DocentRepository extends AbstractRepository {
 	return getEntityManager()
 		.createQuery("select d "
 			+ "from Docent d "
-			+ "where d.wedde between ?1 and ?2 "
+			+ "where d.wedde between :van and :tot "
 			+ "order by d.wedde, d.id", 
 			Docent.class)
-		.setParameter(1, van)
-		.setParameter(2, tot)
+		.setParameter("van", van)
+		.setParameter("tot", tot)
 		.getResultList();
     }
 }
+
+
