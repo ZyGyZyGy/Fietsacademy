@@ -8,6 +8,7 @@ import javax.persistence.PersistenceException;
 
 import be.vdab.entities.Docent;
 import be.vdab.repositories.DocentRepository;
+import be.vdab.valueobjects.VoornaamEnId;
 
 public class DocentService extends AbstractService {
 
@@ -54,7 +55,7 @@ public class DocentService extends AbstractService {
 	return docentRepository.findByWeddeBetween(van, tot, vanafRij, aantalRijen);
     }
 
-    public List<String> findVoornamen() {
+    public List<VoornaamEnId> findVoornamen() {
 	return docentRepository.findVoornamen();
     }
 

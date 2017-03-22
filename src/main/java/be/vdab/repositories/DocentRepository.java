@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Optional;
 
 import be.vdab.entities.Docent;
+import be.vdab.valueobjects.VoornaamEnId;
 
 public class DocentRepository extends AbstractRepository {
 
@@ -22,7 +23,8 @@ public class DocentRepository extends AbstractRepository {
     
     public List<Docent> findByWeddeBetween(BigDecimal van, BigDecimal tot, int vanafRij, int aantalRijen) {
 	return getEntityManager()
-		.createQuery("select d "
+		.createQuery(
+			  "select d "
 			+ "from Docent d "
 			+ "where d.wedde between :van and :tot "
 			+ "order by d.wedde, d.id", 
@@ -34,9 +36,13 @@ public class DocentRepository extends AbstractRepository {
 		.getResultList();
     }
     
-    public List<String> findVoornamen() {
-	return getEntityManager().createQuery(
-		"select d.voornaam from Docent d", String.class).getResultList();
+    public List<VoornaamEnId> findVoornamen() {
+	return getEntityManager()
+		.createQuery(
+			"select new be.vdab.valueobjects.VoornaamEnId(d.id, d.voornaam) "
+		      + "from Docent d",
+			VoornaamEnId.class)
+		.getResultList();
     }
 }
 
