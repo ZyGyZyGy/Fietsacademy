@@ -50,9 +50,12 @@ public class DocentService extends AbstractService {
 	}
     }
 
-    public List<Docent> findByWeddeBetween(BigDecimal van, BigDecimal tot, 
-	    int vanafRij, int aantalRijen) {
+    public List<Docent> findByWeddeBetween(BigDecimal van, BigDecimal tot, int vanafRij, int aantalRijen) {
 	return docentRepository.findByWeddeBetween(van, tot, vanafRij, aantalRijen);
+    }
+
+    public List<String> findVoornamen() {
+	return docentRepository.findVoornamen();
     }
 
 }

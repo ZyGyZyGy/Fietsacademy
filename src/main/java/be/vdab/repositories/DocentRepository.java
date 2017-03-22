@@ -33,6 +33,11 @@ public class DocentRepository extends AbstractRepository {
 		.setMaxResults(aantalRijen)
 		.getResultList();
     }
+    
+    public List<String> findVoornamen() {
+	return getEntityManager().createQuery(
+		"select d.voornaam from Docent d", String.class).getResultList();
+    }
 }
 
 
