@@ -15,6 +15,17 @@ td:first-child, td:last-child {
 <body>
 	<v:menu />
 	<h1>Docenten van tot wedde</h1>
+	<form>
+		<label>Van:<span>${fouten.van}</span> 
+		<input name='van' value='${param.van}' type='number' min='0' step='0.01' required autofocus></label> 
+		<label>Tot:<span>${fouten.tot}</span> 
+		<input name='tot' type='number' value='${param.tot}' min='0' step='0.01' required></label> 
+		<input type='submit' value='Zoeken'>
+	</form>
+	<c:if test="${not empty param and empty fouten and empty docenten}"> 
+		Geen docenten gevonden 
+	</c:if> 
+	<c:if test="${not empty docenten}"> 
 	<table>
 		<thead>
 			<tr>
@@ -35,5 +46,6 @@ td:first-child, td:last-child {
 			</c:forEach>
 		</tbody>
 	</table>
+	</c:if>
 </body>
 </html>
