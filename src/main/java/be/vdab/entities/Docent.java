@@ -15,11 +15,6 @@ import javax.persistence.Table;
 
 import be.vdab.enums.Geslacht;
 
-@NamedQuery(name = "Docent.findByWeddeBetween", 
-query = "select d from Docent d "
-      + "where d.wedde between :van and :tot "
-      + "order by d.wedde,d.id") 
-
 @Entity
 @Table(name = "docenten")
 public class Docent implements Serializable {

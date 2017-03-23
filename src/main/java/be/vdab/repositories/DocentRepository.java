@@ -25,11 +25,11 @@ public class DocentRepository extends AbstractRepository {
     public List<Docent> findByWeddeBetween(BigDecimal van, BigDecimal tot, int vanafRij, int aantalRijen) {
 	return getEntityManager()
 		.createNamedQuery("Docent.findByWeddeBetween", Docent.class)
-		.setParameter("van", van)
-		.setParameter("tot", tot)
-		.setFirstResult(vanafRij)
-		.setMaxResults(aantalRijen)
-		.getResultList();
+    		.setParameter("van", van)
+    		.setParameter("tot", tot)
+    		.setFirstResult(vanafRij)
+    		.setMaxResults(aantalRijen)
+    		.getResultList();
     }
     
     public List<VoornaamEnId> findVoornamen() {
