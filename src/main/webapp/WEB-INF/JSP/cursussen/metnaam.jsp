@@ -22,7 +22,7 @@
 			<c:forEach items='${cursussen}' var='cursus'>
 				<c:set var='soortCursus' value="${cursus['class'].simpleName}" />
 				<li>
-					${cursus}<img src='<c:url value="/images/${soortCursus}.png"/>' 
+					${cursus}&nbsp;<img src='<c:url value="/images/${soortCursus}.png"/>' 
 					alt='${soortCursus}' title='${soortCursus}'>
 				</li>
 			</c:forEach>
