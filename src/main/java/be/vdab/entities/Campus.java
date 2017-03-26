@@ -24,12 +24,15 @@ import be.vdab.valueobjects.TelefoonNr;
 public class Campus implements Serializable {
 
     private static final long serialVersionUID = 1L;
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String naam;
+    
     @Embedded
     private Adres adres;
+    
     @ElementCollection
     @CollectionTable(name = "campussentelefoonnrs", 
     	joinColumns = @JoinColumn(name = "campusid"))

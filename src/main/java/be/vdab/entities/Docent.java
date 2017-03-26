@@ -17,6 +17,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import be.vdab.enums.Geslacht;
@@ -44,6 +45,10 @@ public class Docent implements Serializable {
     	joinColumns = @JoinColumn(name = "docentid"))
     @Column(name = "bijnaam")
     private Set<String> bijnamen;
+    
+    @ManyToOne(optional = false)  
+    @JoinColumn(name = "campusid")  
+    private Campus campus; 
 
     public Docent(String voornaam, String familienaam, BigDecimal wedde, long rijksRegisterNr, Geslacht geslacht) {
 	setVoornaam(voornaam);
@@ -85,6 +90,14 @@ public class Docent implements Serializable {
 
     public Geslacht getGeslacht() {
 	return geslacht;
+    }
+
+    public Campus getCampus() {
+        return campus;
+    }
+
+    public void setCampus(Campus campus) {
+        this.campus = campus;
     }
 
     public static boolean isVoornaamValid(String voornaam) {
