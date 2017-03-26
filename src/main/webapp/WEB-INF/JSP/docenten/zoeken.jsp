@@ -21,17 +21,25 @@
 	<c:if test='${not empty docent}'> 
 	${docent.geslacht == "MAN" ? '&#x2642;' : '&#x2640;' }
     ${docent.naam}, wedde: &euro; <fmt:formatNumber value='${docent.wedde}' />
-   	<h2>Acties</h2>
-   	<c:url value="/docenten/verwijderen.htm" var="verwijderURL">
+		<c:if test='${not empty docent.bijnamen}'>
+			<h2>Bijnamen</h2>
+			<ul>
+				<c:forEach items='${docent.bijnamen}' var='bijnaam'>
+					<li>${bijnaam}</li>
+				</c:forEach>
+			</ul>
+		</c:if>
+		<h2>Acties</h2>
+		<c:url value="/docenten/verwijderen.htm" var="verwijderURL">
    		<c:param name="id" value="${docent.id}"></c:param>
-   	</c:url>
-   	<form action="${verwijderURL}" method="post">
-   		<input type="submit" value="Verwijderen">
-   	</form>
-   	<c:url value="/docenten/opslag.htm" var="opslagURL">
-   		<c:param name="id" value="${docent.id}"></c:param>
-   	</c:url>
-   	<a href="${opslagURL}" class="knop"><input type="button" value="Oslag"></a>
+	   	</c:url>
+	   	<form action="${verwijderURL}" method="post">
+	   		<input type="submit" value="Verwijderen">
+	   	</form>
+	   	<c:url value="/docenten/opslag.htm" var="opslagURL">
+	   		<c:param name="id" value="${docent.id}"></c:param>
+	   	</c:url>
+	   	<a href="${opslagURL}" class="knop"><input type="button" value="Oslag"></a>
 	</c:if>
 </body>
 </html>

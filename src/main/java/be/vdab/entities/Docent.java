@@ -3,14 +3,20 @@ package be.vdab.entities;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Set;
 
+import javax.persistence.CollectionTable;
+import javax.persistence.Column;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.NamedQuery;
+import javax.persistence.JoinColumn;
 import javax.persistence.Table;
 
 import be.vdab.enums.Geslacht;
@@ -20,15 +26,24 @@ import be.vdab.enums.Geslacht;
 public class Docent implements Serializable {
 
     private static final long serialVersionUID = 1L;
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    private String voornaam;
+    
+    private String voornaam;   
     private String familienaam;
     private BigDecimal wedde;
     private long rijksRegisterNr;
+    
     @Enumerated(EnumType.STRING)
     private Geslacht geslacht;
+    
+    @ElementCollection
+    @CollectionTable(name = "docentenbijnamen", 
+    	joinColumns = @JoinColumn(name = "docentid"))
+    @Column(name = "bijnaam")
+    private Set<String> bijnamen;
 
     public Docent(String voornaam, String familienaam, BigDecimal wedde, long rijksRegisterNr, Geslacht geslacht) {
 	setVoornaam(voornaam);
@@ -36,9 +51,12 @@ public class Docent implements Serializable {
 	setWedde(wedde);
 	setRijksRegisterNr(rijksRegisterNr);
 	setGeslacht(geslacht);
+	bijnamen = new HashSet<>(); 
     }
 
-    protected Docent() { // default constructor is verplicht voor JPA, protected - de rest van de applicatie kan deze constructor niet gebruiken
+    protected Docent() { // default constructor is verplicht voor JPA, protected
+			 // - de rest van de applicatie kan deze constructor
+			 // niet gebruiken
     }
 
     public long getId() {
@@ -120,6 +138,10 @@ public class Docent implements Serializable {
 	}
 	this.rijksRegisterNr = rijksRegisterNr;
     }
+    
+    public Set<String> getBijnamen() {
+	return Collections.unmodifiableSet(bijnamen);
+    }
 
     public void opslag(BigDecimal percentage) {
 	BigDecimal factor = BigDecimal.ONE.add(percentage.divide(BigDecimal.valueOf(100)));
@@ -127,4 +149,3 @@ public class Docent implements Serializable {
     }
 
 }
-
