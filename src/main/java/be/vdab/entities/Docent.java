@@ -151,5 +151,9 @@ public class Docent implements Serializable {
     public void addBijnaam(String bijnaam) {
 	bijnamen.add(bijnaam);
     } 
+    
+    public void removeBijnaam(String bijnaam) {
+	bijnamen.remove(bijnaam);
+    }
 
 }
