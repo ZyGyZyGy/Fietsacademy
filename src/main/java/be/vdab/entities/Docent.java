@@ -147,5 +147,9 @@ public class Docent implements Serializable {
 	BigDecimal factor = BigDecimal.ONE.add(percentage.divide(BigDecimal.valueOf(100)));
 	wedde = wedde.multiply(factor).setScale(2, RoundingMode.HALF_UP);
     }
+    
+    public void addBijnaam(String bijnaam) {
+	bijnamen.add(bijnaam);
+    } 
 
 }

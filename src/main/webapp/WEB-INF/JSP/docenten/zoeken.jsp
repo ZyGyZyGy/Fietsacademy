@@ -29,6 +29,11 @@
 				</c:forEach>
 			</ul>
 		</c:if>
+		<form method='post' id='toevoegform'>
+			<label>Bijnaam: <span>${fouten.bijnaam}</span> 
+			<input name='bijnaam' value='${param.bijnaam}' required></label> 
+			<input type='submit' value='Toevoegen' id='toevoegknop'>
+		</form>
 		<h2>Acties</h2>
 		<c:url value="/docenten/verwijderen.htm" var="verwijderURL">
    		<c:param name="id" value="${docent.id}"></c:param>
@@ -41,6 +46,11 @@
 	   	</c:url>
 	   	<a href="${opslagURL}" class="knop"><input type="button" value="Oslag"></a>
 	</c:if>
+	<script>
+		document.getElementById('toevoegform').onsubmit = function() {
+			document.getElementById('toevoegknop').disabled = true;
+		};
+	</script>
 </body>
 </html>
 

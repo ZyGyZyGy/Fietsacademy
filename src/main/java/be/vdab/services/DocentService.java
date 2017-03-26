@@ -79,6 +79,17 @@ public class DocentService extends AbstractService {
 	    throw ex;
 	}
     }
+    
+    public void bijnaamToevoegen(long id, String bijnaam) {
+	beginTransaction();
+	try {
+	    docentRepository.read(id).ifPresent(docent -> docent.addBijnaam(bijnaam));
+	    commit();
+	} catch (PersistenceException ex) {
+	    rollback();
+	    throw ex;
+	}
+    }
 
 }
 
