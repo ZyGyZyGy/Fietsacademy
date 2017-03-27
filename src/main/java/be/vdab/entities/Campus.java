@@ -9,16 +9,19 @@ import javax.persistence.CollectionTable;
 import javax.persistence.ElementCollection;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.OrderBy;
 import javax.persistence.Table;
 
 import be.vdab.valueobjects.Adres;
 import be.vdab.valueobjects.TelefoonNr;
+import be.vdab.entities.Manager;
 
 @Entity
 @Table(name = "campussen")
@@ -43,6 +46,10 @@ public class Campus implements Serializable {
     @OneToMany(mappedBy = "campus")
     @OrderBy("voornaam, familienaam")  
     private Set<Docent> docenten; 
+    
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "managerid")
+    private Manager manager;
 
     public Campus(String naam, Adres adres) {
 	setNaam(naam);
@@ -80,6 +87,10 @@ public class Campus implements Serializable {
     
     public Set<TelefoonNr> getTelefoonNrs() {
 	return Collections.unmodifiableSet(telefoonNrs);
+    }
+    
+    public Manager getManager() {
+	return manager;
     }
     
     public void add(TelefoonNr telefoonNr) {
