@@ -5,6 +5,7 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.Collections;
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.Set;
 
 import javax.persistence.CollectionTable;
@@ -18,6 +19,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -50,6 +52,9 @@ public class Docent implements Serializable {
     @ManyToOne(fetch = FetchType.LAZY, optional = false) 
     @JoinColumn(name = "campusid")  
     private Campus campus; 
+    
+    @ManyToMany(mappedBy = "docenten")
+    private Set<Verantwoordelijkheid> verantwoordelijkheden = new LinkedHashSet<>();
 
     public Docent(String voornaam, String familienaam, BigDecimal wedde, long rijksRegisterNr, Geslacht geslacht) {
 	setVoornaam(voornaam);
@@ -58,6 +63,7 @@ public class Docent implements Serializable {
 	setRijksRegisterNr(rijksRegisterNr);
 	setGeslacht(geslacht);
 	bijnamen = new HashSet<>(); 
+	verantwoordelijkheden = new LinkedHashSet<>(); 
     }
 
     protected Docent() { // default constructor is verplicht voor JPA, protected
@@ -174,6 +180,24 @@ public class Docent implements Serializable {
     
     public void removeBijnaam(String bijnaam) {
 	bijnamen.remove(bijnaam);
+    }
+    
+    public Set<Verantwoordelijkheid> getVerantwoordelijkheden() {
+	return Collections.unmodifiableSet(verantwoordelijkheden);
+    }
+
+    public void add(Verantwoordelijkheid verantwoordelijkheid) {
+	verantwoordelijkheden.add(verantwoordelijkheid);
+	if (!verantwoordelijkheid.getDocenten().contains(this)) {
+	    verantwoordelijkheid.add(this);
+	}
+    }
+
+    public void remove(Verantwoordelijkheid verantwoordelijkheid) {
+	verantwoordelijkheden.remove(verantwoordelijkheid);
+	if (verantwoordelijkheid.getDocenten().contains(this)) {
+	    verantwoordelijkheid.remove(this);
+	}
     }
     
     @Override
