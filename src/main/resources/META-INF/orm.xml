@@ -6,7 +6,8 @@
 	version="2.1">
 	<named-query name='Docent.findByWeddeBetween'>
 		<query>
-			select d from Docent d
+			select d 
+			from Docent d
 			where d.wedde between :van and :tot
 			order by d.wedde, d.id
 		</query>
