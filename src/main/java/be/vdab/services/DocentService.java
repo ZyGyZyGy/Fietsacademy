@@ -53,7 +53,8 @@ public class DocentService extends AbstractService {
     public void opslag(long id, BigDecimal percentage) {
 	beginTransaction();
 	try {
-	    docentRepository.read(id).ifPresent(docent -> docent.opslag(percentage));
+	    docentRepository.readWithLock(id)
+	    	.ifPresent(docent -> docent.opslag(percentage));
 	    commit();
 	} catch (PersistenceException ex) {
 	    rollback();
