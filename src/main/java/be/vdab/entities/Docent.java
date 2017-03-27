@@ -24,6 +24,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.NamedAttributeNode;
 import javax.persistence.NamedEntityGraph;
 import javax.persistence.Table;
+import javax.persistence.Version;
 
 import be.vdab.enums.Geslacht;
 
@@ -60,6 +61,9 @@ public class Docent implements Serializable {
     
     @ManyToMany(mappedBy = "docenten")
     private Set<Verantwoordelijkheid> verantwoordelijkheden = new LinkedHashSet<>();
+    
+    @Version  
+    private long versie; 
 
     public Docent(String voornaam, String familienaam, BigDecimal wedde, long rijksRegisterNr, Geslacht geslacht) {
 	setVoornaam(voornaam);

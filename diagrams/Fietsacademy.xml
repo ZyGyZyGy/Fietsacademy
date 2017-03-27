@@ -35,9 +35,9 @@
 	<entity>
 		<entity-name>be.vdab.entities.Docent</entity-name>
 		<entity-width>120</entity-width>
-		<entity-height>266</entity-height>
+		<entity-height>286</entity-height>
 		<entity-X-Coordinate>230</entity-X-Coordinate>
-		<entity-Y-Coordinate>280</entity-Y-Coordinate>
+		<entity-Y-Coordinate>299</entity-Y-Coordinate>
 		<primary-collapsed>false</primary-collapsed>
 		<relation-collapsed>false</relation-collapsed>
 		<basic-collapsed>false</basic-collapsed>
