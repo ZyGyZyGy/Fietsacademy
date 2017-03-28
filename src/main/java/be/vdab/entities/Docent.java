@@ -3,6 +3,7 @@ package be.vdab.entities;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.sql.Timestamp;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
@@ -63,7 +64,7 @@ public class Docent implements Serializable {
     private Set<Verantwoordelijkheid> verantwoordelijkheden = new LinkedHashSet<>();
     
     @Version  
-    private long versie; 
+    private Timestamp versie; 
 
     public Docent(String voornaam, String familienaam, BigDecimal wedde, long rijksRegisterNr, Geslacht geslacht) {
 	setVoornaam(voornaam);
