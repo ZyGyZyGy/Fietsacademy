@@ -3,8 +3,8 @@
 		<entity-name>be.vdab.entities.Manager</entity-name>
 		<entity-width>120</entity-width>
 		<entity-height>166</entity-height>
-		<entity-X-Coordinate>655</entity-X-Coordinate>
-		<entity-Y-Coordinate>715</entity-Y-Coordinate>
+		<entity-X-Coordinate>265</entity-X-Coordinate>
+		<entity-Y-Coordinate>315</entity-Y-Coordinate>
 		<primary-collapsed>false</primary-collapsed>
 		<relation-collapsed>false</relation-collapsed>
 		<basic-collapsed>false</basic-collapsed>
@@ -14,8 +14,8 @@
 		<entity-name>be.vdab.entities.Cursus</entity-name>
 		<entity-width>120</entity-width>
 		<entity-height>108</entity-height>
-		<entity-X-Coordinate>611</entity-X-Coordinate>
-		<entity-Y-Coordinate>30</entity-Y-Coordinate>
+		<entity-X-Coordinate>780</entity-X-Coordinate>
+		<entity-Y-Coordinate>344</entity-Y-Coordinate>
 		<primary-collapsed>false</primary-collapsed>
 		<relation-collapsed>false</relation-collapsed>
 		<basic-collapsed>false</basic-collapsed>
@@ -25,8 +25,8 @@
 		<entity-name>be.vdab.entities.GroepsCursus</entity-name>
 		<entity-width>120</entity-width>
 		<entity-height>90</entity-height>
-		<entity-X-Coordinate>333</entity-X-Coordinate>
-		<entity-Y-Coordinate>80</entity-Y-Coordinate>
+		<entity-X-Coordinate>630</entity-X-Coordinate>
+		<entity-Y-Coordinate>530</entity-Y-Coordinate>
 		<primary-collapsed>false</primary-collapsed>
 		<relation-collapsed>false</relation-collapsed>
 		<basic-collapsed>false</basic-collapsed>
@@ -36,8 +36,8 @@
 		<entity-name>be.vdab.entities.Docent</entity-name>
 		<entity-width>120</entity-width>
 		<entity-height>286</entity-height>
-		<entity-X-Coordinate>230</entity-X-Coordinate>
-		<entity-Y-Coordinate>299</entity-Y-Coordinate>
+		<entity-X-Coordinate>40</entity-X-Coordinate>
+		<entity-Y-Coordinate>75</entity-Y-Coordinate>
 		<primary-collapsed>false</primary-collapsed>
 		<relation-collapsed>false</relation-collapsed>
 		<basic-collapsed>false</basic-collapsed>
@@ -48,7 +48,7 @@
 		<entity-width>120</entity-width>
 		<entity-height>70</entity-height>
 		<entity-X-Coordinate>900</entity-X-Coordinate>
-		<entity-Y-Coordinate>90</entity-Y-Coordinate>
+		<entity-Y-Coordinate>540</entity-Y-Coordinate>
 		<primary-collapsed>false</primary-collapsed>
 		<relation-collapsed>false</relation-collapsed>
 		<basic-collapsed>false</basic-collapsed>
@@ -58,8 +58,8 @@
 		<entity-name>be.vdab.entities.Verantwoordelijkheid</entity-name>
 		<entity-width>120</entity-width>
 		<entity-height>146</entity-height>
-		<entity-X-Coordinate>230</entity-X-Coordinate>
-		<entity-Y-Coordinate>671</entity-Y-Coordinate>
+		<entity-X-Coordinate>30</entity-X-Coordinate>
+		<entity-Y-Coordinate>417</entity-Y-Coordinate>
 		<primary-collapsed>false</primary-collapsed>
 		<relation-collapsed>false</relation-collapsed>
 		<basic-collapsed>false</basic-collapsed>
@@ -69,8 +69,8 @@
 		<entity-name>be.vdab.entities.Campus</entity-name>
 		<entity-width>120</entity-width>
 		<entity-height>206</entity-height>
-		<entity-X-Coordinate>660</entity-X-Coordinate>
-		<entity-Y-Coordinate>359</entity-Y-Coordinate>
+		<entity-X-Coordinate>265</entity-X-Coordinate>
+		<entity-Y-Coordinate>30</entity-Y-Coordinate>
 		<primary-collapsed>false</primary-collapsed>
 		<relation-collapsed>false</relation-collapsed>
 		<basic-collapsed>false</basic-collapsed>
@@ -80,8 +80,8 @@
 		<entity-name>be.vdab.valueobjects.TelefoonNr</entity-name>
 		<entity-width>120</entity-width>
 		<entity-height>110</entity-height>
-		<entity-X-Coordinate>1080</entity-X-Coordinate>
-		<entity-Y-Coordinate>278</entity-Y-Coordinate>
+		<entity-X-Coordinate>511</entity-X-Coordinate>
+		<entity-Y-Coordinate>16</entity-Y-Coordinate>
 		<primary-collapsed>false</primary-collapsed>
 		<relation-collapsed>false</relation-collapsed>
 		<basic-collapsed>false</basic-collapsed>
@@ -91,8 +91,8 @@
 		<entity-name>be.vdab.valueobjects.Adres</entity-name>
 		<entity-width>120</entity-width>
 		<entity-height>130</entity-height>
-		<entity-X-Coordinate>1135</entity-X-Coordinate>
-		<entity-Y-Coordinate>627</entity-Y-Coordinate>
+		<entity-X-Coordinate>531</entity-X-Coordinate>
+		<entity-Y-Coordinate>218</entity-Y-Coordinate>
 		<primary-collapsed>false</primary-collapsed>
 		<relation-collapsed>false</relation-collapsed>
 		<basic-collapsed>false</basic-collapsed>
