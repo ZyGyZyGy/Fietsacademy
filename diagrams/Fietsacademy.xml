@@ -34,10 +34,10 @@
 
 	<entity>
 		<entity-name>be.vdab.entities.Docent</entity-name>
-		<entity-width>120</entity-width>
+		<entity-width>178</entity-width>
 		<entity-height>286</entity-height>
-		<entity-X-Coordinate>125</entity-X-Coordinate>
-		<entity-Y-Coordinate>165</entity-Y-Coordinate>
+		<entity-X-Coordinate>90</entity-X-Coordinate>
+		<entity-Y-Coordinate>80</entity-Y-Coordinate>
 		<primary-collapsed>false</primary-collapsed>
 		<relation-collapsed>false</relation-collapsed>
 		<basic-collapsed>false</basic-collapsed>
@@ -56,10 +56,10 @@
 
 	<entity>
 		<entity-name>be.vdab.entities.Verantwoordelijkheid</entity-name>
-		<entity-width>120</entity-width>
+		<entity-width>165</entity-width>
 		<entity-height>146</entity-height>
-		<entity-X-Coordinate>115</entity-X-Coordinate>
-		<entity-Y-Coordinate>507</entity-Y-Coordinate>
+		<entity-X-Coordinate>96</entity-X-Coordinate>
+		<entity-Y-Coordinate>509</entity-Y-Coordinate>
 		<primary-collapsed>false</primary-collapsed>
 		<relation-collapsed>false</relation-collapsed>
 		<basic-collapsed>false</basic-collapsed>

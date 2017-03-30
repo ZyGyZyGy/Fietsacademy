@@ -22,6 +22,7 @@ public class Manager implements Serializable {
 
     private String voornaam;
     private String familienaam;
+    
     @OneToOne(fetch = FetchType.LAZY, mappedBy = "manager")
     private Campus campus;
 
